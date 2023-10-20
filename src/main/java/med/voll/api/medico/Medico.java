@@ -7,12 +7,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.endereco.Endereco;
 
-@Table(name = "medicos")
+@Table(name ="medicos")
 @Entity(name = "Medico")
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@Getter
 public class Medico {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Medico {
     private Endereco endereco;
 
     public Medico(DadosCadastroMedico dados) {
-        this.nome = dados.email();
+        this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();
         this.crm = dados.crm();
